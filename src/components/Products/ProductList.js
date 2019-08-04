@@ -8,19 +8,17 @@ import Product from './Product'
 
 class ProductList extends Component {
   state = {
-    post: []
+    products: []
   }
   componentDidMount () {
     axios
       .get('http://jsonplaceholder.typicode.com/posts')
       .then(result => {
         this.setState({ products: result.data })
+        console.log(result)
       })
       .catch(err => {})
   }
-  //   state = {
-  //     products: storeProducts
-  //   }
   render () {
     const products = this.state.products.map(product => {
       return <Product key={product.id} title={product.title} />
