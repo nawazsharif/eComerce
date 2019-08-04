@@ -14,7 +14,7 @@ import Login from './components/Login'
 import About from './components/about'
 // import OrderOnline from './components/OrderOnline'
 import Default from './components/Default'
-import ProductList from './components/ProductList'
+import ProductList from './components/Products/ProductList'
 
 class App extends Component {
   render () {
