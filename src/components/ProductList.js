@@ -1,6 +1,5 @@
 import React, { Component } from 'react'
 import axios from 'axios'
-var express = require('express')
 
 // import Title from './Title'
 // import {storeProducts} from "../data";
@@ -9,9 +8,9 @@ var express = require('express')
 class ProductList extends Component {
   componentDidMount () {
     axios
-      .get('http://localhost/test-api/allproducts.php')
-      .then(result => {
-        console.log(result)
+      .get('http://192.168.100.4/test-api/allproducts.php')
+      .then(responce => {
+        console.log(responce)
       })
       .catch(err => {})
   }
