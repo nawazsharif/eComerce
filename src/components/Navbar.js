@@ -1,11 +1,8 @@
 import React, { Component } from 'react'
 import { Link } from 'react-router-dom'
-import logo from '../logo.png'
-// import styled from "styled-components";
-import 'bootstrap/dist/css/bootstrap.min.css'
-// import { ButtonContainer } from "./Button";
+import logo from '../logos/logo.png'
 
-export default class componentName extends Component {
+export default class Navbar extends Component {
   render () {
     return (
       <nav className='navbar navbar-expand-lg navbar-light bg-light'>
@@ -32,7 +29,7 @@ export default class componentName extends Component {
               </Link>
             </li>
             <li className='nav-item'>
-              <Link to='/OrderOnline' className='nav-link'>
+              <Link to='/order-online' className='nav-link'>
                 Order Online
               </Link>
             </li>
@@ -54,7 +51,7 @@ export default class componentName extends Component {
 
             <li className='nav-item'>
               <Link to='/cart' className='nav-link'>
-                <i className='fas fa-cart-plus' /> My Cart
+                <i className='fa fa-cart-plus' /> My Cart
               </Link>
             </li>
             <li className='nav-item'>
