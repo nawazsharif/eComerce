@@ -3,6 +3,7 @@ import Product from './Product'
 import Title from './Title'
 // import { storeProducts } from '../data'
 import { ProductConsumer } from '../context'
+import PropTypes from 'prop-types'
 export default class ProductList extends Component {
   // state = {
   //   products: storeProducts
@@ -27,4 +28,13 @@ export default class ProductList extends Component {
       </React.Fragment>
     )
   }
+}
+Product.PropTypes = {
+  product: PropTypes.shape({
+    id: PropTypes.number,
+    img: PropTypes.string,
+    title: PropTypes.string,
+    price: PropTypes.number,
+    inCart: PropTypes.bool
+  }).isRequired
 }
