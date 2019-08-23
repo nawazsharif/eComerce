@@ -7,30 +7,37 @@ export default class Product extends Component {
     return (
       <div className='productwrapper mb-4 col-9 col-md-6 mx-auto col-lg-3'>
         <div className='card'>
-          <div
-            className='img-container p-5'
-            onClick={console.log('you click on image')}
-          >
-            <Link to='/details'>
-              <img src={img} alt='product' className='card-img-top' />
-            </Link>
-            <button
-              className='cart-btn'
-              disabled={!!inCart}
-              onClick={() => {
-                console.log('added')
-              }}
-            >
-              {inCart ? (
-                <p clasName='mb-0 text-capitalized' disabled>
-                  {''}
-                  in Cart
-                </p>
-              ) : (
-                <i className='fa fa-cart-plus' />
-              )}
-            </button>
-          </div>
+          <ProductConsumer>
+            {value => (
+              <div
+                className='img-container p-5'
+                onClick={() => {
+                  value.handleDetails(id)
+                }}
+              >
+                <Link to='/details'>
+                  <img src={img} alt='product' className='card-img-top' />
+                </Link>
+                <button
+                  className='cart-btn'
+                  disabled={!!inCart}
+                  onClick={() => {
+                    value.addToCart(id)
+                  }}
+                >
+                  {inCart ? (
+                    <p className='mb-0 text-capitalized' disabled>
+                      {''}
+                      in Cart
+                    </p>
+                  ) : (
+                    <i className='fa fa-cart-plus' />
+                  )}
+                </button>
+              </div>
+            )}
+          </ProductConsumer>
+
           <div className='card-footer d-flex justify-content-between'>
             <p className='align-self-center mb-0'> {title}</p>
             <h5 className='number mb-0'>

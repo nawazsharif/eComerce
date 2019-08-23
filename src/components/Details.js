@@ -27,12 +27,19 @@ export default class Details extends Component {
                   <p>{price}</p>
                   <span>Some info </span>
                   <p>{info}</p>
-                  <Link to='/order-online' className='btn btn-info'>
+                  <Link to='/order-online' className='btn btn-info mr-2'>
                     Back
                   </Link>
-                  <Link to='/cart' className='btn btn-warning'>
-                    add to cart
-                  </Link>
+                  <button
+                    to='/cart'
+                    disabled={!!inCart}
+                    className='btn btn-warning'
+                    onClick={() => {
+                      value.addToCart(id)
+                    }}
+                  >
+                    {inCart ? 'inCart' : 'add to cart'}
+                  </button>
                 </div>
               </div>
             </div>
